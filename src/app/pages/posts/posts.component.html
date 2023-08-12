@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <h1>Todos mis Posts</h1>
+    <button class="btn btn-primary" routerLink="new">➕ Agregar Post</button>
+    <hr> 
+    <div class="row">
+        <div class="col-md-3" *ngFor="let post of data">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p class="card-text">{{post.content}}</p>
+                    <button class="btn btn-warning" (click)="editPost(post.id)">✏️Editar</button>
+                    <button class="btn btn-danger" (click)="onDeletePost(post.id)">❌Eliminar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

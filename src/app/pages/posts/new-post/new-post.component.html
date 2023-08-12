@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <button type="button" class="btn btn-outline-primary mb-2" aria-label="Close" (click)="cancelForm()">
+                Regresar
+              </button>
+              <div class="p-1">
+                <form [formGroup]="postsForm">
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active">Nuevo Post</a>
+                    </li>
+                  </ul>
+                  <div class="row mt-2 p-4">
+                    <div class="col-md-12 form-group">
+                        <label class="col-form-label"><b>Título:</b> </label>
+                        <input type="text" class="form-control form-control-sm"
+                               formControlName="title" placeholder="Título del Post">
+                      </div>
+                    <div class="col-md-12 form-group">
+                        <label class="col-form-label"><b>Contenido:</b> </label>
+                        <input type="text" class="form-control form-control-sm"
+                               formControlName="content" placeholder="Contenido">
+                      </div>
+                  </div>
+                </form>
+                <div class="d-flex justify-content-end mt-5">
+                  <button type="button" class="btn btn-danger" (click)="cancelForm()"> Cancel
+                  </button>
+                  <button type="button" class="btn btn-primary"
+                          [disabled]="postsForm.invalid" (click)="savePosts()">
+                    Save
+                  </button>
+                </div>
+              </div>
+        </div>        
+        </div>
+    </div>
